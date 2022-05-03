@@ -15,10 +15,10 @@ const ProductsContent = () => {
 
       {data &&
         <section className="products-list">
-          {data.map(item => (
+          {data.map((item, idx) => (
             <ProductItem 
               discount={item.discount} 
-              key={item.id}
+              key={idx}
               id={item.id} 
               price={item.price}
               currentPrice={item.currentPrice}

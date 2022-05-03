@@ -2,6 +2,8 @@ import Layout from '../../layouts/Main';
 import { useSelector } from 'react-redux';
 import CheckoutStatus from '../../components/checkout-status';
 import CheckoutItems from '../../components/checkout/items';
+import { useRef } from 'react';
+
 
 const CheckoutPage = () => {
 
@@ -14,6 +16,14 @@ const CheckoutPage = () => {
 
     return totalPrice;
   })
+
+  const submitPayment = useRef(null); 
+
+  const handleClick = (e) => {
+    submitPayment.current?.click();
+    
+    console.log('triggerred')
+  }
 
   return (
     <Layout>
@@ -33,20 +43,20 @@ const CheckoutPage = () => {
 
               <div className="block">
                 <h3 className="block__title">Shipping information</h3>
-                <form className="form">
+                <form className="form" action="http://localhost:8000/get-token/" method="GET">
                   <div className="form__input-row form__input-row--two">
                     <div className="form__col">
-                      <input className="form__input form__input--sm" type="text" placeholder="Email" />
+                      <input className="form__input form__input--sm" name="email" refs="email" type="email" placeholder="Email" required/>
                     </div>
 
                     <div className="form__col">
-                      <input className="form__input form__input--sm" type="text" placeholder="Address" />
+                      <input className="form__input form__input--sm" name="address" type="text" placeholder="Address" />
                     </div>
                   </div>
                   
                   <div className="form__input-row form__input-row--two">
                     <div className="form__col">
-                      <input className="form__input form__input--sm" type="text" placeholder="First name" />
+                      <input className="form__input form__input--sm" name="name" type="text" placeholder="First name" />
                     </div>
 
                     <div className="form__col">
@@ -66,18 +76,21 @@ const CheckoutPage = () => {
 
                   <div className="form__input-row form__input-row--two">
                     <div className="form__col">
-                      <input className="form__input form__input--sm" type="text" placeholder="Phone number" />
+                      <input className="form__input form__input--sm" name="phone" type="text" placeholder="Phone number" />
+                      <input type="hidden" name="amount" value={priceTotal}/>
+
                     </div>
 
                     <div className="form__col">
                       <div className="select-wrapper select-form">
                         <select>
                           <option>Country</option>
-                          <option value="Argentina">Argentina</option>
+                          <option value="Indonesia">Indonesia</option>
                         </select>
                       </div>
                     </div>
                   </div>
+                   <button ref={submitPayment} style={{display: "none"}} type="submit" className="btn pay btn--rounded btn--yellow">Proceed to payment 2</button>
                 </form>
               </div>
             </div>
@@ -87,23 +100,18 @@ const CheckoutPage = () => {
                 <h3 className="block__title">Payment method</h3>
                 <ul className="round-options round-options--three">
                   <li className="round-item">
-                    <img src="/images/logos/paypal.png" alt="Paypal" />
+                    <img src="/images/logos/new/credit_card.png" alt="cc" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/visa.png" alt="Paypal" />
+                    <img src="/images/logos/new/bank_transfer.png" alt="bank transfer" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/mastercard.png" alt="Paypal" />
+                    <img src="/images/logos/new/gopay.png" alt="gopay" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/maestro.png" alt="Paypal" />
+                    <img src="/images/logos/new/shopee_pay.png" alt="shopee pay" />
                   </li>
-                  <li className="round-item">
-                    <img src="/images/logos/discover.png" alt="Paypal" />
-                  </li>
-                  <li className="round-item">
-                    <img src="/images/logos/ideal-logo.svg" alt="Paypal" />
-                  </li>
+               
                 </ul>
               </div>
               
@@ -111,21 +119,10 @@ const CheckoutPage = () => {
                 <h3 className="block__title">Delivery method</h3>
                 <ul className="round-options round-options--two">
                   <li className="round-item round-item--bg">
-                    <img src="/images/logos/inpost.svg" alt="Paypal" />
-                    <p>$20.00</p>
+                    <img src="/images/logos/new/sicepat.png" alt="sicaepat" />
+                    {/* <p>$20.00</p> */}
                   </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/dpd.svg" alt="Paypal" />
-                    <p>$12.00</p>
-                  </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/dhl.svg" alt="Paypal" />
-                    <p>$15.00</p>
-                  </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/maestro.png" alt="Paypal" />
-                    <p>$10.00</p>
-                  </li>
+              
                 </ul>
               </div>
             </div>
@@ -147,7 +144,7 @@ const CheckoutPage = () => {
             <a href="/cart" className="cart__btn-back"><i className="icon-left"></i> Back</a>
             <div className="cart-actions__items-wrapper">
               <button type="button" className="btn btn--rounded btn--border">Continue shopping</button>
-              <button type="button" className="btn btn--rounded btn--yellow">Proceed to payment</button>
+              <button onClick={handleClick} type="button" className="btn btn--rounded btn--yellow">Proceed to payment</button>
             </div>
           </div>
         </div>

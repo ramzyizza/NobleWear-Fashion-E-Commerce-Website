@@ -36,9 +36,9 @@ const ShoppingCart = () => {
                   <th></th>
                 </tr>
 
-                {cartItems.map(item => (
+                {cartItems.map((item, idx) => (
                   <Item 
-                    key={item.id}
+                    key={idx}
                     id={item.id}
                     thumb={item.thumb}
                     name={item.name}

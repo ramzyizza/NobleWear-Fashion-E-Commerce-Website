@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { some } from 'lodash';
 import { addProduct } from './../../../store/actions/cartActions';
 import { toggleFavProduct } from './../../../store/actions/userActions';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Content = ({ product }) => {
   const dispatch = useDispatch();
@@ -26,8 +28,25 @@ const Content = ({ product }) => {
       }
     ))
   }
-
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  
   const addToCart = () => {
+    Toast.fire({
+      icon: 'success',
+      title: 'Added to cart !'
+    })
+
     dispatch(addProduct(
       { 
         id: product.id,
@@ -60,9 +79,9 @@ const Content = ({ product }) => {
         <div className="product-filter-item">
           <h5>Color:</h5>
           <div className="checkbox-color-wrapper">
-            {productsColors.map(type => (
+            {productsColors.map((type,idx) => (
               <CheckboxColor 
-                key={type.id} 
+                key={idx} 
                 type={'radio'} 
                 name="product-color" 
                 color={type.color}
@@ -78,8 +97,8 @@ const Content = ({ product }) => {
             <div className="select-wrapper">
               <select onChange={onSelectChange}>
                 <option>Choose size</option>
-                {productsSizes.map(type => (
-                  <option value={type.label}>{type.label}</option>
+                {productsSizes.map((type, idx) => (
+                  <option key={idx} value={type.label}>{type.label}</option>
                 ))}
               </select>
             </div>

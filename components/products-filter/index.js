@@ -50,9 +50,9 @@ const ProductsFilter = () => {
         <div className="products-filter__block">
           <button type="button">Product type</button>
           <div className="products-filter__block__content">
-            {productsTypes.map(type => (
+            {productsTypes.map((type, idx) => (
               <Checkbox 
-                key={type.id} 
+                key={idx} 
                 name="product-type" 
                 label={type.name} 
               />
@@ -70,10 +70,10 @@ const ProductsFilter = () => {
         <div className="products-filter__block">
           <button type="button">Size</button>
           <div className="products-filter__block__content checkbox-square-wrapper">
-            {productsSizes.map(type => (
+            {productsSizes.map((type, idx)=> (
               <Checkbox 
                 type="square" 
-                key={type.id} 
+                key={idx} 
                 name="product-size" 
                 label={type.label} />
             ))}
@@ -84,8 +84,8 @@ const ProductsFilter = () => {
           <button type="button">Color</button>
           <div className="products-filter__block__content">
             <div className="checkbox-color-wrapper">
-              {productsColors.map(type => (
-                <CheckboxColor key={type.id} name="product-color" color={type.color} />
+              {productsColors.map((type, idx) => (
+                <CheckboxColor key={idx} name="product-color" color={type.color} />
               ))}
             </div>
           </div>

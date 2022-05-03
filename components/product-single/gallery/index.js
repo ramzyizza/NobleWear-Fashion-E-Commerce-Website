@@ -4,8 +4,8 @@ const Gallery = ({ images }) => {
   return (
     <section className="product-gallery">
       <div className="product-gallery__thumbs">
-        {images.map(image => (
-          <div key={image} className="product-gallery__thumb">
+        {images.map((image, idx) => (
+          <div key={idx} className="product-gallery__thumb">
             <img src={image} alt="" />
           </div>
         ))}
