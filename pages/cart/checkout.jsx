@@ -43,7 +43,7 @@ const CheckoutPage = () => {
 
               <div className="block">
                 <h3 className="block__title">Shipping information</h3>
-                <form className="form" action="http://localhost:8000/get-token/" method="GET">
+                <form className="form" action="https://row-shop.herokuapp.com/get-token/" method="GET">
                   <div className="form__input-row form__input-row--two">
                     <div className="form__col">
                       <input className="form__input form__input--sm" name="email" refs="email" type="email" placeholder="Email" required/>
