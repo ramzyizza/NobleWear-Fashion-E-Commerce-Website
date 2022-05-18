@@ -6,7 +6,7 @@ export const products = [
     discount: 30,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
@@ -65,7 +65,7 @@ export const products = [
     price: 119.99,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
@@ -124,7 +124,7 @@ export const products = [
     price: 119.99,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
@@ -183,7 +183,7 @@ export const products = [
     price: 119.99,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
@@ -242,7 +242,7 @@ export const products = [
     price: 119.99,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
@@ -302,7 +302,7 @@ export const products = [
     discount: 30,
     quantityAvailable: 2,
     category: 'T-shirt',
-    currentPrice: 89.99,
+    currentPrice: 89000.99,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
