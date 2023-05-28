@@ -37,8 +37,8 @@ const CheckoutPage = () => {
           <div className="checkout-content">
             <div className="checkout__col-6">
               <div className="checkout__btns">
-                <button className="btn btn--rounded btn--yellow">Log in</button>
-                <button className="btn btn--rounded btn--border">Sign up</button>
+                <a href='/login'><button className="btn btn--rounded btn--yellow">Log in</button></a>
+                <a href='/register'><button className="btn btn--rounded btn--border">Sign up</button></a>
               </div>
 
               <div className="block">

@@ -1,18 +1,18 @@
 export const products = [
   {
     id: "1",
-    name: "T-Shirt Summer Vibes",
-    price: 119.99,
-    discount: 30,
-    quantityAvailable: 2,
+    name: "Cotton Oversized Crew Neck T-Shirt Uniqlo U",
+    price: 299000,
+    discount: 40,
+    quantityAvailable: 5,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice: 150000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-1.jpg"],
     punctuationReview: {
       countOpionions: 81,
-      punctuation: 4.5,
+      punctuation: 4.8,
       votes: [
         {
           value: 1,
@@ -38,21 +38,21 @@ export const products = [
     },
     reviews: [
       {
-        name: "John Doe",
-        avatar: "/images/featured-1.jpg",
-        description:
-          "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
-        punctuation: 2,
-      },
-      {
-        name: "John Doe",
+        name: "Ramzy Izza Wardhana",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 4,
       },
       {
-        name: "John Doe",
+        name: "Antonius Teddy",
+        avatar: "/images/featured-1.jpg",
+        description:
+          "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
+        punctuation: 4,
+      },
+      {
+        name: "Fariz Muhammad",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
@@ -62,11 +62,11 @@ export const products = [
   },
   {
     id: "2",
-    name: "T-Shirt Summer Vibes",
-    price: 119.99,
+    name: "Extra Fine Cotton Broadcloth Striped Shirt",
+    price: 550000,
     quantityAvailable: 2,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice: 550000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-2.jpg"],
@@ -98,21 +98,21 @@ export const products = [
     },
     reviews: [
       {
-        name: "John Doe",
+        name: "Putu Arva",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 2,
       },
       {
-        name: "John Doe",
+        name: "Antonius Teddy",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 4,
       },
       {
-        name: "John Doe",
+        name: "Peter Johan",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
@@ -122,11 +122,11 @@ export const products = [
   },
   {
     id: "3",
-    name: "T-Shirt Summer Vibes",
-    price: 119.99,
+    name: "Sweat Pullover Long Sleeve Hoodie",
+    price: 229000,
     quantityAvailable: 2,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice: 229000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-3.jpg"],
@@ -158,21 +158,21 @@ export const products = [
     },
     reviews: [
       {
-        name: "John Doe",
+        name: "Fariz Muhammad",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 2,
       },
       {
-        name: "John Doe",
+        name: "Peter Johan",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 4,
       },
       {
-        name: "John Doe",
+        name: "Putu Arva",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
@@ -182,11 +182,11 @@ export const products = [
   },
   {
     id: "4",
-    name: "T-Shirt Summer Vibes",
-    price: 119.99,
+    name: "AirSense Shirt Jacket (Ultra Light)",
+    price: 630000,
     quantityAvailable: 2,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice: 630000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-4.jpg"],
@@ -218,21 +218,21 @@ export const products = [
     },
     reviews: [
       {
-        name: "John Doe",
+        name: "Cecep",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 2,
       },
       {
-        name: "John Doe",
+        name: "Anto ",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 4,
       },
       {
-        name: "John Doe",
+        name: "Komar",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
@@ -242,11 +242,11 @@ export const products = [
   },
   {
     id: "5",
-    name: "T-Shirt Summer Vibes",
-    price: 119.99,
+    name: "Linen Blend 3/4 Sleeve Shirt Dress",
+    price: 420000,
     quantityAvailable: 2,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice: 420000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-5.jpg"],
@@ -278,21 +278,21 @@ export const products = [
     },
     reviews: [
       {
-        name: "John Doe",
+        name: "Waluyo",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 2,
       },
       {
-        name: "John Doe",
+        name: "Sulastri",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
         punctuation: 4,
       },
       {
-        name: "John Doe",
+        name: "Mutia",
         avatar: "/images/featured-1.jpg",
         description:
           "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>",
@@ -302,12 +302,12 @@ export const products = [
   },
   {
     id: "6",
-    name: "Chinise worker from the future",
-    price: 119.99,
+    name: "Pleated Straight Pants",
+    price: 250000,
     discount: 30,
     quantityAvailable: 2,
     category: "T-shirt",
-    currentPrice: 89000.99,
+    currentPrice:  130000,
     sizes: ["xl", "l"],
     colors: ["#000", "6F3E18", "#D4BE8D", "#FFF"],
     images: ["/images/products/product-6.jpg"],

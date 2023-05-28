@@ -9,8 +9,7 @@ const Footer = () => {
             <Logo />
 
             <p>
-              House My Brand designs clothing for the young, the old & everyone
-              in between – but most importantly, for the fashionable
+            This E-Commerce Final project is created to fulfil Workshop on Implementing Software Design - MII21-2504.
             </p>
             <ul className="site-footer__social-networks">
               <li>
@@ -85,7 +84,7 @@ const Footer = () => {
                   target="_blank"
                   href="https://www.linkedin.com/in/ramzyizza/"
                 >
-                  Ramzy Izza Wardhana
+                  • Ramzy Izza Wardhana
                 </a>
               </li>
               <li>
@@ -93,12 +92,12 @@ const Footer = () => {
                   target="_blank"
                   href="https://www.linkedin.com/in/fariz-muhammad-ridwan/"
                 >
-                  Fariz Muhammad
+                  • Fariz Muhammad
                 </a>
               </li>
               <li>
                 <a target="_blank" href="https://www.linkedin.com/in/putuarva/">
-                  Putu Arva Raysendriya Ersuputra
+                  • Putu Arva Raysendriya Ersuputra
                 </a>
               </li>
               <li>
@@ -106,7 +105,7 @@ const Footer = () => {
                   target="_blank"
                   href="https://www.linkedin.com/in/antonius-t-kurniawan/"
                 >
-                  Antonius Teddy Kurniawan
+                  • Antonius Teddy Kurniawan
                 </a>
               </li>
               <li>
@@ -114,7 +113,7 @@ const Footer = () => {
                   target="_blank"
                   href="https://www.linkedin.com/in/peter-setiabudi/"
                 >
-                  Peter Johan Arkadhira Setiabudi
+                   • Peter Johan Arkadhira Setiabudi
                 </a>
               </li>
             </ul>

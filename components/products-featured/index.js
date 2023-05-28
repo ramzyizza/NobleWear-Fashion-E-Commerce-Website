@@ -9,8 +9,8 @@ const ProductsFeatured = () => {
     <section className="section section-products-featured">
       <div className="container">
         <header className="section-products-featured__header">
-          <h3>Selected just for you</h3>
-          <a href="/products" className="btn btn--rounded btn--border">Show All</a>
+          <h3>Our Best Seller Collections</h3>
+          <a href="/products" className="btn btn--rounded btn--border">Discover More</a>
         </header>
 
         <ProductsCarousel products={data} />

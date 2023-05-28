@@ -26,8 +26,8 @@ export const productsColors = [
   },
   {
     id: '6',
-    label: 'Blue',
-    color: '#0F73AD',
+    label: 'White',
+    color: '#FFFFFF',
   },
 ];
 

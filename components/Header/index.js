@@ -53,21 +53,25 @@ const Header = ({ isErrorPage }) => {
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
       <div className="container">
         <Link href="/">
-          <a>
-            <h1 className="site-logo">
-              <Logo />
-            </h1>
-          </a>
+
+          <h1 className="site-logo">
+            <Logo />
+          </h1>
+
         </Link>
         <nav
           ref={navRef}
           className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
         >
           <Link href="/products">
-            <a>Products</a>
+            Product Catalog
           </Link>
-          <a href="#">Inspiration</a>
-          <a href="#">Rooms</a>
+          <Link href="/product/1">
+            Top Selling Product
+          </Link>
+          <Link href="/register">
+            Register Account
+          </Link>
           <button className="site-nav__btn">
             <p>Account</p>
           </button>
@@ -96,7 +100,7 @@ const Header = ({ isErrorPage }) => {
               className="icon-search"
             ></i>
           </button>
-          <Link href="/cart">
+          <Link href="/cart" legacyBehavior>
             <button className="btn-cart">
               <i className="icon-cart"></i>
               {cartItems.length > 0 && (
@@ -104,7 +108,7 @@ const Header = ({ isErrorPage }) => {
               )}
             </button>
           </Link>
-          <Link href="/login">
+          <Link href="/login" legacyBehavior>
             <button className="site-header__btn-avatar">
               <i className="icon-avatar"></i>
             </button>

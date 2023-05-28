@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 
-const Main = ({ children, title = 'Next.js Ecommerce' }) => {
+const Main = ({ children, title = 'NobleWear E-Commerce' }) => {
   const router = useRouter();
   const pathname = router.pathname;
 

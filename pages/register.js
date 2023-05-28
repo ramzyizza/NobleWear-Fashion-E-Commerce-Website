@@ -7,14 +7,13 @@ const RegisterPage = () => (
       <div className="container">
         <div className="back-button-section">
           <Link href="/products">
-            <a><i className="icon-left"></i> Back to store</a>
+            <i className="icon-left"></i>Back to store
           </Link>
         </div>
 
         <div className="form-block">
-          <h2 className="form-block__title">Create an account and discover the benefits</h2>
-          <p className="form-block__description">Lorem Ipsum is simply dummy text of the printing 
-          and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+          <h2 className="form-block__title">Create New Account</h2>
+          <p className="form-block__description">Get access to fashion deals and discounts by Signing up today!</p>
           
           <form className="form">
             <div className="form__input-row">
@@ -47,7 +46,7 @@ const RegisterPage = () => (
 
             <p className="form__signup-link">
               <Link href="/login">
-                <a href="#">Are you already a member?</a>
+                Are you already a member?
               </Link>
             </p>
           </form>

@@ -276,6 +276,7 @@ h5 {
     }
     &.btn--yellow {
       background-color: var(--color-orange);
+      color: white;
     }
   }
 }
@@ -288,7 +289,7 @@ h5 {
     font-size: 16px;
   }
   svg {
-    // width: 38px;
+    width: 160px;
     // height: 28px;
     fill: currentColor;
     object-fit: contain;
@@ -713,10 +714,21 @@ h5 {
         font-size: 36px;
         color: #fff;
         font-weight: 600;
-        line-height: 120%;
-        margin-bottom: 45px;
+        // line-height: 120%;
+        margin-bottom: 30px;
         @include breakpoint(phone) {
-          font-size: 64px;
+          font-size: 50px;
+          width: 600px;
+        }
+      }
+      h3 {
+        font-size: 30px;
+        color: #fff;
+        font-weight: 600;
+        line-height: 120%;
+        margin-top: 5px;
+        @include breakpoint(phone) {
+          font-size: 30px;
           width: 600px;
         }
       }
@@ -735,6 +747,16 @@ h5 {
           margin-right: 10px;
           background-color: var(--color-orange);
           border-radius: 100%;
+        }
+      }
+      li {
+        font-size: 10px;
+        color: #fff;
+        line-height: 150%;
+        margin-top: 5px;
+        @include breakpoint(phone) {
+          font-size: 12px;
+          // width: 600px;
         }
       }
     }
@@ -791,7 +813,7 @@ h5 {
     padding: 21px 22px;
     position: relative;
     @include breakpoint(phone) {
-      height: 375px;
+      height: 380px;
       padding: 55px 46px;
       margin-bottom: 10px;
     }
@@ -819,7 +841,7 @@ h5 {
         margin-bottom: 15px;
         line-height: 150%;
         @include breakpoint(phone) {
-          font-size: 23px;
+          font-size: 20px;
           margin-bottom: 20px;
         }
       }
@@ -968,7 +990,7 @@ h5 {
       }
       &.product__price--discount {
         h4 {
-          color: #ff0000;
+          color: var(--color-orange);
         }
       }
     }
@@ -1124,14 +1146,14 @@ h5 {
     }
     svg {
       object-fit: contain;
-      width: 45px;
+      width: 100px;
       height: 35px;
-      fill: #000;
+      fill: #868686;
       margin-right: 15px;
     }
     h6 {
       display: flex;
-      color: #000;
+      color: #868686;
       font-weight: 300;
       align-items: center;
       margin-bottom: 33px;
@@ -1144,6 +1166,8 @@ h5 {
       font-size: 13px;
       line-height: 190%;
     }
+
+
   }
   .site-footer__social-networks {
     display: flex;
@@ -1175,7 +1199,7 @@ h5 {
       }
       li {
         font-size: 14px;
-        color: #000;
+        color: #868686;
         margin-bottom: 12px;
         @include breakpoint(phone) {
           margin-bottom: 15px;

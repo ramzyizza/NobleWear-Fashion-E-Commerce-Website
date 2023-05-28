@@ -7,7 +7,7 @@ import Tooltip from 'rc-tooltip';
 import { useForm } from "react-hook-form";
 
 // data
-import productsTypes from './../../utils/data/products-types';
+import productsTypes, { productsBrands } from './../../utils/data/products-types';
 import productsColors from './../../utils/data/products-colors';
 import productsSizes from './../../utils/data/products-sizes';
 
@@ -48,7 +48,7 @@ const ProductsFilter = () => {
       
       <div className={`products-filter__wrapper ${filtersOpen ? 'products-filter__wrapper--open' : ''}`}>
         <div className="products-filter__block">
-          <button type="button">Product type</button>
+          <button type="button">Brands</button>
           <div className="products-filter__block__content">
             {productsTypes.map((type, idx) => (
               <Checkbox 

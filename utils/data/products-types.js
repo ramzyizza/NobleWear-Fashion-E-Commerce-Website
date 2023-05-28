@@ -1,24 +1,24 @@
-export const productsTypes = [
+export const productsBrands = [
   {
     id: '1',
-    name: 'T-Shirts',
+    name: 'Uniqlo',
     count: '172',
   },
   {
     id: '2',
-    name: 'Sweatshirts',
+    name: 'Zara',
     count: '131',
   },
   {
     id: '3',
-    name: 'Tank Tops',
+    name: 'H&M',
     count: '56',
   },
   {
     id: '4',
-    name: 'Dress shirts',
+    name: 'Polo',
     count: '8',
   },
 ];
 
-export default productsTypes;
+export default productsBrands;
