@@ -54,7 +54,9 @@ const Header = ({ isErrorPage }) => {
       <div className="container">
         <Link href="/">
           <a>
-            <Logo />
+            <h1 className="site-logo">
+              <Logo />
+            </h1>
           </a>
         </Link>
         <nav
