@@ -20,20 +20,19 @@ const LoginPage = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <a><i className="icon-left"></i> Back to store</a>
+              <i className="icon-left"></i>Back to store
             </Link>
           </div>
 
           <div className="form-block">
-            <h2 className="form-block__title">Log in</h2>
-            <p className="form-block__description">Lorem Ipsum is simply dummy text of the printing and typesetting 
-            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <h2 className="form-block__title">Welcome back!</h2>
+            <p className="form-block__description">We're excited to see you again! Access exclusive content, and receive personalized recommendations to elevate your style!</p>
             
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form__input-row">
                 <input 
                   className="form__input" 
-                  placeholder="email" 
+                  placeholder="Email" 
                   type="text" 
                   name="email"
                   ref={register({
@@ -94,7 +93,7 @@ const LoginPage = () => {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
   
 export default LoginPage

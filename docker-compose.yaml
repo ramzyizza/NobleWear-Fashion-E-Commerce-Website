@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  # backend:
+  #   image: :1.0
+  #   working_dir: /app/backend
+  #   volumes:
+  #     - ./backend:/app/backend
+  #   ports:
+  #     - 5000:5000
+  #   command: nodemon index
+  # command: npx prisma generate
+  # npx prisma generate first (unsolved problem)
+
+  mysql:
+    image: mysql/mysql-server
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_USERNAME=root
+      - MYSQL_ROOT_PASSWORD=123
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 82:80
+    volumes:
+      - /etc/phpmyadmin/config.user.inc.php
+    environment:
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql

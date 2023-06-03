@@ -1,0 +1,33 @@
+
+
+# POST http://localhost:5000/register
+# Content-Type: application/json
+
+# {
+  # "user_firstName": "fariz",
+  # "user_pass": "nitip4bseN",
+  # "user_lastName": "Doe",
+  # "user_email": "fariz@example.com"
+# }
+
+POST http://localhost:5000/forgot
+Content-Type: application/json
+
+{
+    "EMAIL": "fariz@example.com",
+    "PASSWORD": "123"
+}
+
+# POST http://localhost:5000/cart/edit
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjkzNjQ4LCJpYXQiOjE2ODEyOTMwNDh9.O34DclJmcjYAbyDUG69jWYmVNTMeh8xF1LErXTtCUFU
+# Content-Type: application/json
+
+# {
+#     "USER_ID": 2,
+#     "PRODUCT_ID": 2,
+#     "COLOR": "green",
+#     "QUANTITY": 69
+# }
+
+# GET http://localhost:5000/products?page=1&brand=ltd
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjMwNTk2LCJpYXQiOjE2ODEyMjk5OTZ9.jZuzBw70RfjKO5yctbq9cjfrxkbC-_MuQeJNontHEfw
