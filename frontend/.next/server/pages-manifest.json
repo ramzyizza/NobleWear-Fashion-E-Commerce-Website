@@ -3,7 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/forgot-password": "pages/forgot-password.js",
+  "/products": "pages/products.js",
   "/login": "pages/login.js",
-  "/api/products": "pages/api/products.js",
-  "/products": "pages/products.js"
+  "/api/products": "pages/api/products.js"
 }

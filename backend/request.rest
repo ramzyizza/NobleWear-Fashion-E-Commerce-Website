@@ -10,13 +10,13 @@
   # "user_email": "fariz@example.com"
 # }
 
-# POST http://localhost:5000/login
-# Content-Type: application/json
+POST http://localhost:5000/login
+Content-Type: application/json
 
-# {
-#     "EMAIL": "fariz@example.com",
-#     "PASSWORD": "123"
-# }
+{
+    "EMAIL": "fariz@example.com",
+    "PASSWORD": "12345"
+}
 
 # POST http://localhost:5000/cart/edit
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjkzNjQ4LCJpYXQiOjE2ODEyOTMwNDh9.O34DclJmcjYAbyDUG69jWYmVNTMeh8xF1LErXTtCUFU
@@ -52,3 +52,5 @@
 # {
 #   "PRODUCT_ID": "3"
 # }
+
+# GET http://localhost:5000/products?NAME=Memek
