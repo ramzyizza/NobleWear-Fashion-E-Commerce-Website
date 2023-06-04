@@ -1,44 +1,18 @@
 import { useSelector } from "react-redux";
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useFormik } from "formik";
 import Link from "next/link";
 import Layout from "../../layouts/Main";
 import CheckoutStatus from "../../components/checkout-status";
 import CheckoutItems from "../../components/checkout/items";
-import { selectTotalPrice } from "../../store/reducers/cart";
 
 const CheckoutPage = () => {
   const router = useRouter();
   const [data, setData] = useState({});
-  const priceTotal = useSelector((state) => state.cart.cartItems).reduce(
-    (acc, item) => acc + item.price * item.count,
-    0
-  );
+  const [grossAmount, setGrossAmount] = useState(0);
+  const priceTotal = useSelector((state) => state.cart.cartItems);
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      address: "",
-      firstName: "",
-      lastName: "",
-      phone: "",
-      city: "",
-      postalCode: "",
-      country: "",
-      amount: priceTotal,
-    },
-
-    onSubmit: async (values) => {
-      console.log(values);
-      const response = await fetch("/api/transaction", {
-        method: "POST",
-        body: JSON.stringify(values),
-      });
-      const data = await response.json();
-      console.log(data);
-    },
-  });
+  console.log("price", grossAmount);
 
   const submitPayment = useRef(null);
 
@@ -50,7 +24,7 @@ const CheckoutPage = () => {
 
     window.snap.pay({
       token: transactionToken,
-      amount: amount,
+      amount: grossAmount,
       currency: currency,
       orderId: orderId,
       // Other configuration options for the payment gateway
@@ -58,29 +32,26 @@ const CheckoutPage = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/transaction");
-        if (response.ok) {
-          const data = await response.json();
-          setData(data);
-        }
-      } catch (error) {
-        console.error("Failed to fetch data from API");
-      }
-    };
-
-    fetchData();
-  }, []);
+    const x = priceTotal.reduce((a, b) => a + b.price * b.count, 0);
+    console.log("x", x);
+    setGrossAmount(x);
+  }, [priceTotal]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // router.push("/transaction");
-    console.log(formik.values);
+
+    const formData = new FormData(event.target);
+    const bodyA = Object.fromEntries(formData.entries());
+    bodyA.amount = grossAmount;
+
+    console.log(bodyA, grossAmount);
+
     const response = await fetch("/api/transaction", {
       method: "POST",
+      body: JSON.stringify(bodyA),
     });
     const data = await response.json();
+    console.log(data);
 
     const redirectUrl = data.redirect_url;
 
@@ -88,17 +59,17 @@ const CheckoutPage = () => {
       onSuccess: function (result) {
         console.log("success");
         console.log(result);
-        router.push("/transaction");
+        router.push("/transaction-success");
       },
       onPending: function (result) {
         console.log("pending");
         console.log(result);
-        router.push("/transaction");
+        router.push("/transaction-pending");
       },
       onError: function (result) {
         console.log("error");
         console.log(result);
-        router.push("/transaction");
+        router.push("/transaction-error");
       },
     });
   };
@@ -122,9 +93,6 @@ const CheckoutPage = () => {
       document.body.removeChild(scriptTag);
     };
   }, []);
-
-  // Then somewhere else on your React component, `window.snap` global object will be available to use
-  // e.g. you can then call `window.snap.pay( ... )` function.
 
   return (
     <Layout>
@@ -162,9 +130,10 @@ const CheckoutPage = () => {
                       <input
                         className="form__input form__input--sm"
                         name="email"
-                        refs="email"
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
+                        value={data.email}
+                        onChange={(e) =>
+                          setData({ ...data, email: e.target.value })
+                        }
                         type="email"
                         placeholder="Email"
                         required
@@ -176,8 +145,10 @@ const CheckoutPage = () => {
                         className="form__input form__input--sm"
                         name="address"
                         type="text"
-                        value={formik.values.address}
-                        onChange={formik.handleChange}
+                        value={data.address}
+                        onChange={(e) =>
+                          setData({ ...data, address: e.target.value })
+                        }
                         placeholder="Address"
                       />
                     </div>
@@ -191,8 +162,10 @@ const CheckoutPage = () => {
                         id="firstName"
                         type="text"
                         placeholder="First name"
-                        value={formik.values.firstName}
-                        onChange={formik.handleChange}
+                        value={data.firstName}
+                        onChange={(e) =>
+                          setData({ ...data, firstName: e.target.value })
+                        }
                       />
                     </div>
 
@@ -203,8 +176,10 @@ const CheckoutPage = () => {
                         placeholder="City"
                         name="city"
                         id="city"
-                        value={formik.values.city}
-                        onChange={formik.handleChange}
+                        value={data.city}
+                        onChange={(e) =>
+                          setData({ ...data, city: e.target.value })
+                        }
                       />
                     </div>
                   </div>
@@ -217,8 +192,10 @@ const CheckoutPage = () => {
                         placeholder="Last name"
                         id="lastName"
                         name="lastName"
-                        value={formik.values.lastName}
-                        onChange={formik.handleChange}
+                        value={data.lastName}
+                        onChange={(e) =>
+                          setData({ ...data, lastName: e.target.value })
+                        }
                       />
                     </div>
 
@@ -228,8 +205,10 @@ const CheckoutPage = () => {
                         type="text"
                         id="postalCode"
                         placeholder="Postal code / ZIP"
-                        value={formik.values.postalCode}
-                        onChange={formik.handleChange}
+                        value={data.postalCode}
+                        onChange={(e) =>
+                          setData({ ...data, postalCode: e.target.value })
+                        }
                       />
                     </div>
                   </div>
@@ -241,17 +220,26 @@ const CheckoutPage = () => {
                         name="phone"
                         type="text"
                         placeholder="Phone number"
-                        value={formik.values.phone}
-                        onChange={formik.handleChange}
+                        value={data.phone}
+                        onChange={(e) =>
+                          setData({ ...data, phone: e.target.value })
+                        }
                       />
-                      <input type="hidden" name="amount" value={priceTotal} />
+                      <input
+                        type="hidden"
+                        name="amount"
+                        id="amount"
+                        value={grossAmount}
+                      />
                     </div>
 
                     <div className="form__col">
                       <div className="select-wrapper select-form">
                         <select
-                          value={formik.values.country}
-                          onChange={formik.handleChange}
+                          value={data.country}
+                          onChange={(e) =>
+                            setData({ ...data, country: e.target.value })
+                          }
                           id="country"
                         >
                           <option>Country</option>
@@ -261,7 +249,6 @@ const CheckoutPage = () => {
                     </div>
                   </div>
                   <button
-                    ref={submitPayment}
                     type="submit"
                     className="btn pay btn--rounded btn--yellow"
                   >
@@ -288,7 +275,7 @@ const CheckoutPage = () => {
 
               <div className="checkout-total">
                 <p>Total cost</p>
-                <h3>${priceTotal}</h3>
+                <h3>${grossAmount}</h3>
               </div>
             </div>
           </div>
@@ -310,3 +297,4 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
+  
