@@ -11,9 +11,6 @@ const CheckoutPage = () => {
   const [data, setData] = useState({});
   const [grossAmount, setGrossAmount] = useState(0);
   const priceTotal = useSelector((state) => state.cart.cartItems);
-
-  console.log("price", grossAmount);
-
   const submitPayment = useRef(null);
 
   const handleClick = () => {
@@ -33,7 +30,6 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     const x = priceTotal.reduce((a, b) => a + b.price * b.count, 0);
-    console.log("x", x);
     setGrossAmount(x);
   }, [priceTotal]);
 
@@ -43,8 +39,6 @@ const CheckoutPage = () => {
     const formData = new FormData(event.target);
     const bodyA = Object.fromEntries(formData.entries());
     bodyA.amount = grossAmount;
-
-    console.log(bodyA, grossAmount);
 
     const response = await fetch("/api/transaction", {
       method: "POST",
@@ -105,23 +99,6 @@ const CheckoutPage = () => {
 
           <div className="checkout-content">
             <div className="checkout__col-6">
-              <div className="checkout__btns">
-                <Link href="/login" passHref>
-                  <span>
-                    <button className="btn btn--rounded btn--yellow">
-                      Log in
-                    </button>
-                  </span>
-                </Link>
-                <Link href="/register" passHref>
-                  <span>
-                    <button className="btn btn--rounded btn--border">
-                      Sign up
-                    </button>
-                  </span>
-                </Link>
-              </div>
-
               <div className="block">
                 <h3 className="block__title">Shipping information</h3>
                 <form className="form" onSubmit={handleSubmit}>
@@ -227,7 +204,7 @@ const CheckoutPage = () => {
                       />
                       <input
                         type="hidden"
-                        name="amount"
+                        name="totalPrice"
                         id="amount"
                         value={grossAmount}
                       />
@@ -297,4 +274,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-  

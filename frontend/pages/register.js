@@ -9,6 +9,10 @@ const RegisterPage = () => {
   const router = useRouter();
   const { register, handleSubmit, errors } = useForm();
 
+  if (localStorage.getItem("userCredential")) {
+    router.push("/products");
+  }
+
   const onSubmit = async (data) => {
     console.log("sini");
     const res = await postData(`${server}/register`, {

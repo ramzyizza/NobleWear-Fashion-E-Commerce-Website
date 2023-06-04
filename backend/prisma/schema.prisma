@@ -39,13 +39,13 @@ model product_data {
   size              product_data_size?
   productColor      product_data_productColor?
   order_data        order_data[]
-  product_image     product_image?
+  product_image     product_image[]
   product_review    product_review[]
 }
 
 model product_image {
-  product_id   Int          @id
-  image_id     Int?         @unique(map: "image_id")
+  product_id   Int
+  image_id     Int          @id @unique(map: "image_id") @default(autoincrement())
   url          String?      @db.VarChar(255)
   product_data product_data @relation(fields: [product_id], references: [product_id], onDelete: NoAction, onUpdate: NoAction, map: "product_image_ibfk_1")
 

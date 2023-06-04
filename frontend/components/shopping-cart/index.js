@@ -1,19 +1,29 @@
-import { useSelector } from 'react-redux';
-import CheckoutStatus from '../../components/checkout-status';
-import Item from './item';
+import { useSelector } from "react-redux";
+import CheckoutStatus from "../../components/checkout-status";
+import { useRouter } from "next/router";
+import Item from "./item";
 
 const ShoppingCart = () => {
-  const { cartItems } = useSelector(state => state.cart);
+  const { cartItems } = useSelector((state) => state.cart);
+  const router = useRouter();
 
-  const priceTotal = useSelector(state => {
+  const priceTotal = useSelector((state) => {
     const cartItems = state.cart.cartItems;
     let totalPrice = 0;
-    if(cartItems.length > 0) {
-      cartItems.map(item => totalPrice += item.price * item.count);
+    if (cartItems.length > 0) {
+      cartItems.map((item) => (totalPrice += item.price * item.count));
     }
 
     return totalPrice;
-  })
+  });
+
+  const handleClick = () => {
+    if (localStorage.getItem("userCredential")) {
+      router.push("/cart/checkout");
+    }
+
+    router.push("/login");
+  };
 
   return (
     <section className="cart">
@@ -24,11 +34,11 @@ const ShoppingCart = () => {
         </div>
 
         <div className="cart-list">
-          {cartItems.length > 0 &&
+          {cartItems.length > 0 && (
             <table>
               <tbody>
                 <tr>
-                  <th style={{textAlign: 'left'}}>Product</th>
+                  <th style={{ textAlign: "left" }}>Product</th>
                   <th>Color</th>
                   <th>Size</th>
                   <th>Ammount</th>
@@ -37,7 +47,7 @@ const ShoppingCart = () => {
                 </tr>
 
                 {cartItems.map((item, idx) => (
-                  <Item 
+                  <Item
                     key={idx}
                     id={item.id}
                     thumb={item.thumb}
@@ -49,27 +59,34 @@ const ShoppingCart = () => {
                   />
                 ))}
               </tbody>
-            </table> 
-          } 
-          
-          {cartItems.length === 0 && 
-            <p>Nothing in the cart</p>
-          }
+            </table>
+          )}
+
+          {cartItems.length === 0 && <p>Nothing in the cart</p>}
         </div>
-      
+
         <div className="cart-actions">
-          <a href="/products" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</a>
-          <input type="text" placeholder="Promo Code" className="cart__promo-code" />
+          <a href="/products" className="cart__btn-back">
+            <i className="icon-left"></i> Continue Shopping
+          </a>
+          <input
+            type="text"
+            placeholder="Promo Code"
+            className="cart__promo-code"
+          />
 
           <div className="cart-actions__items-wrapper">
-            <p className="cart-actions__total">Total cost <strong>Rp. {priceTotal.toFixed(2)}</strong></p>
-            <a href="/cart/checkout" className="btn btn--rounded btn--yellow">Checkout</a>
+            <p className="cart-actions__total">
+              Total cost <strong>Rp. {priceTotal.toFixed(2)}</strong>
+            </p>
+            <a onClick={handleClick} className="btn btn--rounded btn--yellow">
+              Checkout
+            </a>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 };
 
-  
-export default ShoppingCart
+export default ShoppingCart;

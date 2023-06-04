@@ -11,6 +11,8 @@ export const addProducts = async (
   req: express.Request,
   res: express.Response
 ): Promise<void> => {
+  console.log(req.body);
+
   const PRODUCT_ID: number = parseInt(req.body.PRODUCT_ID as string);
   const NAME: string = req.body.NAME as string;
   const CATEGORY: string = req.body.CATEGORY as string;
@@ -47,7 +49,7 @@ export const addProducts = async (
         price: PRICE,
       },
     });
-    res.status(200).json({ success: true });
+    res.status(200).json({ data: response, success: true });
   } catch (error: any) {
     res.status(500).json({ msg: error.message, success: false });
   }
@@ -115,5 +117,24 @@ export const getProducts = async (
     res.status(200).json({ data: response, totalPages, totalProduct });
   } catch (error: any) {
     res.status(500).json({ msg: error.message });
+  }
+};
+
+export const addImage = async (
+  req: express.Request,
+  res: express.Response
+): Promise<void> => {
+  const PRODUCT_ID: number = parseInt(req.body.PRODUCT_ID as string);
+  const data = {
+    url: req.body.URL,
+    product_id: PRODUCT_ID,
+  };
+  try {
+    const response = await prisma.product_image.create({
+      data: data,
+    });
+    res.status(200).json({ success: true });
+  } catch (error: any) {
+    res.status(500).json({ msg: error.message, success: false });
   }
 };

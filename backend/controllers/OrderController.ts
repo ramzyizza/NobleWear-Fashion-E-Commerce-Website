@@ -29,10 +29,11 @@ export const createOrder = async (
   res: express.Response
 ): Promise<void> => {
   try {
+    console.log(req.body);
     const orderData = {
       transaction_status: req.body.transaction_status as string,
       quantity: parseInt(req.body.quantity as string),
-      total_price: parseFloat(req.body.total_price as string),
+      total_price: parseFloat(req.body.amount as string),
       product_id: parseInt(req.body.product_id as string),
       shipper_id: parseInt(req.body.shipper_id as string),
       seller_id: parseInt(req.body.seller_id as string),

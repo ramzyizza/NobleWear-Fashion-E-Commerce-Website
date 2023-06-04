@@ -23,13 +23,17 @@
 #     "user_id": 1
 # }
 
-POST http://localhost:5000/order/update
+POST http://localhost:5000/products/add/image
 Content-Type: application/json
 
 {
-    "order_id": "5",
-    "transaction_status": "failed",
+    "PRODUCT_ID": "1",
+    "URL": "www.pornhub.com"
 }
+
+
+# GET  http://localhost:5000/order?order_id=5
+
 
 # POST http://localhost:5000/cart/edit
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjkzNjQ4LCJpYXQiOjE2ODEyOTMwNDh9.O34DclJmcjYAbyDUG69jWYmVNTMeh8xF1LErXTtCUFU
