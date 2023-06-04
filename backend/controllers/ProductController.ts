@@ -11,21 +11,23 @@ export const addProducts = async (
   req: express.Request,
   res: express.Response
 ): Promise<void> => {
-  const NAME: string = req.query.NAME as string;
-  const CATEGORY: string = req.query.CATEGORY as string;
-  const PRICE: number = parseFloat(req.query.PRICE as string);
-  const CURRENT_PRICE: number = parseFloat(req.query.CURRENT_PRICE as string);
-  const DISCOUNT: number = parseFloat(req.query.DISCOUNT as string);
-  const QUANTITY: number = parseInt(req.query.DISCOUNT as string);
-  const SIZE: product_data_size = req.query.SIZE as product_data_size;
-  const COLOR: product_data_productColor = req.query
-    .color as product_data_productColor;
+  const PRODUCT_ID: number = parseInt(req.body.PRODUCT_ID as string);
+  const NAME: string = req.body.NAME as string;
+  const CATEGORY: string = req.body.CATEGORY as string;
+  const PRICE: number = parseFloat(req.body.PRICE as string);
+  const CURRENT_PRICE: number = parseFloat(req.body.CURRENT_PRICE as string);
+  const DISCOUNT: number = parseFloat(req.body.DISCOUNT as string);
+  const QUANTITY: number = parseInt(req.body.QUANTITY as string);
+  const SIZE: product_data_size = req.body.SIZE as product_data_size;
+  const COLOR: product_data_productColor = req.body
+    .COLOR as product_data_productColor;
   try {
     const response = await prisma.product_data.upsert({
       where: {
-        name: NAME,
+        product_id: !isNaN(PRODUCT_ID) ? PRODUCT_ID : 0,
       },
       update: {
+        name: NAME,
         quantityAvailable: QUANTITY,
         currentPrice: CURRENT_PRICE,
         discount: DISCOUNT,
@@ -43,6 +45,22 @@ export const addProducts = async (
         size: SIZE,
         category: CATEGORY,
         price: PRICE,
+      },
+    });
+    res.status(200).json({ success: true });
+  } catch (error: any) {
+    res.status(500).json({ msg: error.message, success: false });
+  }
+};
+
+export const dropProducts = async (
+  req: express.Request,
+  res: express.Response
+): Promise<void> => {
+  try {
+    const response = await prisma.product_data.delete({
+      where: {
+        product_id: parseInt(req.body.PRODUCT_ID),
       },
     });
     res.status(200).json({ success: true });
