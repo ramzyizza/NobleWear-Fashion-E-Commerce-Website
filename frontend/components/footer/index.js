@@ -9,7 +9,8 @@ const Footer = () => {
             <Logo />
 
             <p>
-            This E-Commerce Final project is created to fulfil Workshop on Implementing Software Design - MII21-2504.
+              This E-Commerce Final project is created to fulfil Workshop on
+              Implementing Software Design - MII21-2504.
             </p>
             <ul className="site-footer__social-networks">
               <li>
@@ -82,9 +83,9 @@ const Footer = () => {
               <li>
                 <a
                   target="_blank"
-                  href="https://www.linkedin.com/in/ramzyizza/"
+                  href="https://www.linkedin.com/in/antonius-t-kurniawan/"
                 >
-                  • Ramzy Izza Wardhana
+                  • Antonius Teddy Kurniawan
                 </a>
               </li>
               <li>
@@ -96,6 +97,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/peter-setiabudi/"
+                >
+                  • Peter Johan Arkadhira Setiabudi
+                </a>
+              </li>
+              <li>
                 <a target="_blank" href="https://www.linkedin.com/in/putuarva/">
                   • Putu Arva Raysendriya Ersuputra
                 </a>
@@ -103,17 +112,9 @@ const Footer = () => {
               <li>
                 <a
                   target="_blank"
-                  href="https://www.linkedin.com/in/antonius-t-kurniawan/"
+                  href="https://www.linkedin.com/in/ramzyizza/"
                 >
-                  • Antonius Teddy Kurniawan
-                </a>
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/peter-setiabudi/"
-                >
-                   • Peter Johan Arkadhira Setiabudi
+                  • Ramzy Izza Wardhana
                 </a>
               </li>
             </ul>

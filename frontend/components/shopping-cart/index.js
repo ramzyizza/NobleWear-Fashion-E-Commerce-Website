@@ -20,6 +20,7 @@ const ShoppingCart = () => {
   const handleClick = () => {
     if (localStorage.getItem("userCredential")) {
       router.push("/cart/checkout");
+      return;
     }
 
     router.push("/login");

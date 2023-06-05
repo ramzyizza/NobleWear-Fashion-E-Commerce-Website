@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const CheckoutItems = () => {
-  const { cartItems } = useSelector(state => state.cart);
+  const { cartItems } = useSelector((state) => state.cart);
 
   return (
     <ul className="checkout-items">
-      {cartItems.map((item,idx) => (
+      {cartItems.map((item, idx) => (
         <li key={idx} className="checkout-item">
           <div className="checkout-item__content">
             <div className="checkout-item__img">
@@ -17,12 +17,11 @@ const CheckoutItems = () => {
               <span>#{item.id}</span>
             </div>
           </div>
-          <h3>${item.price}</h3>
+          <h3>Rp. {item.price}</h3>
         </li>
       ))}
     </ul>
-  )
+  );
 };
 
-  
-export default CheckoutItems
+export default CheckoutItems;

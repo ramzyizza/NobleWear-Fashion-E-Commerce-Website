@@ -12,7 +12,6 @@ const LoginPage = () => {
   if (localStorage.getItem("userCredential")) {
     router.push("/products");
   }
-
   const onSubmit = async (data) => {
     const res = await postData(`${server}/login`, {
       EMAIL: data.email,
