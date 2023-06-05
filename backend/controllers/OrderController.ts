@@ -24,6 +24,18 @@ export const getOrder = async (
   }
 };
 
+export const getOrderAdmin = async (
+  req: express.Request,
+  res: express.Response
+): Promise<void> => {
+  try {
+    const response = await prisma.order_data.findMany();
+    res.status(200).json({ data: response });
+  } catch (error: any) {
+    res.status(500).json({ msg: error.message });
+  }
+};
+
 export const createOrder = async (
   req: express.Request,
   res: express.Response

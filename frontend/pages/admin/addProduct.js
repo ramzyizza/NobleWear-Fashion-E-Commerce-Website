@@ -52,7 +52,7 @@ const AddProduct = () => {
 
         const productId = data.data.product_id;
 
-        router.push(`/admin/addImage?pid=${productId}`);
+        router.push(`/admin/addImage/?pid=${productId}`);
       } else {
         console.error("Failed to save the product to the server.");
       }
@@ -63,18 +63,19 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div className="navbar">
-        <a href="products.html" target="_blank">
+      <div className="navbar-add">
+        {/* <a className="nav-item" href="products.html" target="_blank">
           PRODUCTS
         </a>
-        <a href="index.html" target="_blank">
+        <a className="nav-item" href="index.html" target="_blank">
           ADMIN PANEL
-        </a>
+        </a> */}
       </div>
       <div id="container">
-        <h1>Add Product</h1>
-        <form id="form" onSubmit={handleSubmit}>
+        <h1 className="cont-h1">Add Product</h1>
+        <form className="cont-form" id="form" onSubmit={handleSubmit}>
           <input
+            className="cont-form-item"
             required
             type="text"
             id="name"
@@ -83,6 +84,7 @@ const AddProduct = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <input
+            className="cont-form-item"
             required
             type="text"
             id="category"
@@ -91,6 +93,7 @@ const AddProduct = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
           <input
+            className="cont-form-item"
             required
             type="text"
             id="currentPrice"
@@ -99,6 +102,7 @@ const AddProduct = () => {
             onChange={(e) => setCurrentPrice(e.target.value)}
           />
           <input
+            className="cont-form-item"
             required
             type="number"
             id="price"
@@ -107,27 +111,32 @@ const AddProduct = () => {
             onChange={(e) => setPrice(e.target.value)}
           />
           <select
+            className="cont-form-item"
             id="size"
             value={size}
             onChange={(e) => setSize(e.target.value)}
           >
-            <option value="">Select Gender</option>
+            <option value="">Select Size</option>
             <option value="S">S</option>
             <option value="M">M</option>
             <option value="L">L</option>
             <option value="XL">XL</option>
           </select>
           <select
+            className="cont-form-item"
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
           >
-            <option value="">Is the Product Sold?</option>
+            <option className="cont-form-item" value="">
+              Is the Product Sold?
+            </option>
             <option value="Grey">Grey</option>
             <option value="Black">Black</option>
             <option value="White">White</option>
           </select>
           <input
+            className="cont-form-item"
             required
             type="number"
             id="discount"
@@ -136,6 +145,7 @@ const AddProduct = () => {
             onChange={(e) => setDiscount(e.target.value)}
           />
           <input
+            className="cont-form-item"
             required
             type="number"
             id="quantity"
@@ -143,7 +153,9 @@ const AddProduct = () => {
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
           />
-          <button type="submit">Submit</button>
+          <button className="btn-submit" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>

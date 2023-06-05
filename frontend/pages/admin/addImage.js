@@ -45,18 +45,19 @@ const AddProductImage = () => {
 
   return (
     <div>
-      <div className="navbar">
-        <a href="products.html" target="_blank">
+      <div className="navbar-add">
+        {/* <a href="products.html" target="_blank">
           ADD PRODUCT IMAGE
         </a>
         <a href="index.html" target="_blank">
           ADMIN PANEL
-        </a>
+        </a> */}
       </div>
       <div id="container">
-        <h1>Add Product Image</h1>
-        <form id="form" onSubmit={handleSubmit}>
+        <h1 className="cont-h1">Add Product Image</h1>
+        <form className="cont-form" id="form" onSubmit={handleSubmit}>
           <input
+            className="cont-form-item"
             required
             type="text"
             id="imageUrl"
@@ -64,7 +65,9 @@ const AddProductImage = () => {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <button type="submit">Submit</button>
+          <button className="btn-submit" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>

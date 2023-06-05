@@ -53,17 +53,17 @@ const CheckoutPage = () => {
       onSuccess: function (result) {
         console.log("success");
         console.log(result);
-        router.push("/transaction-success");
+        router.push("/success");
       },
       onPending: function (result) {
         console.log("pending");
         console.log(result);
-        router.push("/transaction-pending");
+        router.push("/pending");
       },
       onError: function (result) {
         console.log("error");
         console.log(result);
-        router.push("/transaction-error");
+        router.push("/error");
       },
     });
   };

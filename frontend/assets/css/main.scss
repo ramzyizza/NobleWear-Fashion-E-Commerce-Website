@@ -1166,8 +1166,6 @@ h5 {
       font-size: 13px;
       line-height: 190%;
     }
-
-
   }
   .site-footer__social-networks {
     display: flex;
@@ -2882,4 +2880,76 @@ h5 {
       background-color: red;
     }
   }
+}
+
+.admin-list {
+  margin-top: 30px;
+  font-size: 20px;
+  margin-left: 30px;
+  color: black;
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+.admin-order {
+  background-color: #9f7d5c;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-h1 {
+  font-size: 50px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.admin-h2 {
+  font-size: 20px;
+  color: white;
+}
+
+.navbar-add {
+  background-color: #9f7d5c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.nav-item {
+  margin-inline: 120px;
+  margin-block: 10px;
+}
+
+.cont-h1 {
+  font-size: 30px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.cont-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.cont-form-item {
+  margin-bottom: 20px;
+  border: 1px solid slategray;
+  padding: 5px;
+}
+
+.btn-submit {
+  background-color: #9f7d5c;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding-block: 15px;
 }
