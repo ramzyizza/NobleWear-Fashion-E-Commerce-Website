@@ -50,7 +50,7 @@ const ShoppingCart = () => {
                 {cartItems.map((item, idx) => (
                   <Item
                     key={idx}
-                    id={item.id}
+                    id={item.id !== undefined ? item.id : 1} // todos (ini rough patch bgt anjg wtf awokawok)
                     thumb={item.thumb}
                     name={item.name}
                     color={item.color}

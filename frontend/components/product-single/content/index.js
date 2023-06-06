@@ -21,13 +21,13 @@ const Content = ({ product }) => {
   const { favProducts } = useSelector((state) => state.user);
   const isFavourite = some(
     favProducts,
-    (productId) => productId === product.id
+    (productId) => productId === product.product_id
   );
 
   const toggleFav = () => {
     dispatch(
       toggleFavProduct({
-        id: product.id,
+        id: product.product_id,
       })
     );
   };
@@ -53,7 +53,10 @@ const Content = ({ product }) => {
       addProduct({
         id: product.product_id,
         name: product.name,
-        thumb: product.product_image[0].url,
+        thumb:
+          product.product_image[0] !== undefined
+            ? product.product_image[0].url
+            : null,
         price: product.currentPrice,
         count: count,
         color: color,
@@ -67,7 +70,7 @@ const Content = ({ product }) => {
       <div className="product-content__intro">
         <h5 className="product__id">
           Product ID:<br></br>
-          {product.id}
+          {product.product_id}
         </h5>
         <span className="product-on-sale">Sale</span>
         <h2 className="product__name">{product.name}</h2>
