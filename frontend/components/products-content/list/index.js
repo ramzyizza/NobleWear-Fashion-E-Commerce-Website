@@ -16,8 +16,8 @@ const ProductsContent = () => {
           {data.data.map((item, idx) => (
             <ProductItem
               discount={item.discount}
-              key={idx}
-              id={item.id}
+              key={item.product_id}
+              id={item.product_id}
               price={item.price}
               currentPrice={item.currentPrice}
               productImage={item.product_image[0]}

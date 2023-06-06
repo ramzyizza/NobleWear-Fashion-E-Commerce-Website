@@ -38,8 +38,8 @@ const ProductsCarousel = ({ products }) => {
               discount={item.discount}
               price={item.price}
               currentPrice={item.currentPrice}
-              key={item.id}
-              id={item.id}
+              key={item.product_id}
+              id={item.product_id}
               productImage={item.product_image[0]}
               name={item.name}
             />

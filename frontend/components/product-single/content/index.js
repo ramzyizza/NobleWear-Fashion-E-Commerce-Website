@@ -51,7 +51,7 @@ const Content = ({ product }) => {
 
     dispatch(
       addProduct({
-        id: product.id,
+        id: product.product_id,
         name: product.name,
         thumb: product.product_image[0].url,
         price: product.currentPrice,

@@ -83,27 +83,8 @@ export const getProducts = async (
   const SIZE: product_data_size = req.query.SIZE as product_data_size;
   const COLOR: product_data_productColor = req.query
     .COLOR as product_data_productColor;
-  const page: number = parseInt(req.query.PAGE as string);
-  const perPage: number = 10;
   try {
-    const count = await prisma.product_data.count({
-      where: {
-        name: {
-          contains: NAME,
-        },
-        currentPrice: {
-          lte: !isNaN(MAX) ? MAX : undefined,
-          gte: !isNaN(MIN) ? MIN : undefined,
-        },
-        size: SIZE,
-        productColor: COLOR,
-      },
-    });
-    const totalProduct = count;
-    const totalPages = Math.ceil(count / perPage);
     const response = await prisma.product_data.findMany({
-      skip: !isNaN(page) ? page * perPage : 0,
-      take: perPage,
       where: {
         product_id: !isNaN(PRODUCT_ID) ? PRODUCT_ID : undefined,
         name: {
@@ -122,10 +103,10 @@ export const getProducts = async (
             url: true,
           },
         },
-        product_review: true, // place holder for now
+        product_review: true, // todos
       },
     });
-    res.status(200).json({ data: response, totalPages, totalProduct });
+    res.status(200).json({ data: response });
   } catch (error: any) {
     res.status(500).json({ msg: error.message });
   }

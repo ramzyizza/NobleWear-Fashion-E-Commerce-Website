@@ -1,5 +1,5 @@
 const Gallery = ({ images }) => {
-  const featImage = images[0].url;
+  const featImage = images[0] !== undefined ? images[0].url : null;
 
   return (
     <section className="product-gallery">
