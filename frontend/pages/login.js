@@ -10,7 +10,7 @@ const LoginPage = () => {
   const { register, handleSubmit, errors } = useForm();
 
   if (localStorage.getItem("userCredential")) {
-    router.push("/products");
+    router.push("/");
   }
   const onSubmit = async (data) => {
     const res = await postData(`${server}/login`, {
