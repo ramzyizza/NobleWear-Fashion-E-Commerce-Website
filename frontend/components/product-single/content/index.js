@@ -53,7 +53,7 @@ const Content = ({ product }) => {
       addProduct({
         id: product.id,
         name: product.name,
-        thumb: product.images[0],
+        thumb: product.product_image[0].url,
         price: product.currentPrice,
         count: count,
         color: color,
