@@ -4,6 +4,7 @@ import {
   product_data_size,
   product_data_productColor,
 } from "@prisma/client";
+import { url } from "inspector";
 
 const prisma = new PrismaClient();
 
@@ -75,6 +76,7 @@ export const getProducts = async (
   req: express.Request,
   res: express.Response
 ): Promise<void> => {
+  const PRODUCT_ID: number = parseInt(req.query.PRODUCT_ID as string);
   const NAME: string = req.query.NAME as string;
   const MAX: number = parseInt(req.query.MAX as string);
   const MIN: number = parseInt(req.query.MIN as string);
@@ -103,6 +105,7 @@ export const getProducts = async (
       skip: !isNaN(page) ? page * perPage : 0,
       take: perPage,
       where: {
+        product_id: !isNaN(PRODUCT_ID) ? PRODUCT_ID : undefined,
         name: {
           contains: NAME,
         },
@@ -112,6 +115,14 @@ export const getProducts = async (
         },
         size: SIZE,
         productColor: COLOR,
+      },
+      include: {
+        product_image: {
+          select: {
+            url: true,
+          },
+        },
+        product_review: true, // place holder for now
       },
     });
     res.status(200).json({ data: response, totalPages, totalProduct });

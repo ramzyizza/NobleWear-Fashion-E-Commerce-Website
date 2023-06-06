@@ -23,13 +23,8 @@
 #     "user_id": 1
 # }
 
-POST http://localhost:5000/products/add/image
-Content-Type: application/json
+GET http://localhost:5000/products?PRODUCT_ID=1
 
-{
-    "PRODUCT_ID": "1",
-    "URL": "www.pornhub.com"
-}
 
 
 # GET  http://localhost:5000/order?order_id=5

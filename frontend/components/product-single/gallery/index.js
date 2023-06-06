@@ -1,12 +1,12 @@
 const Gallery = ({ images }) => {
-  const featImage = images[0];
+  const featImage = images[0].url;
 
   return (
     <section className="product-gallery">
       <div className="product-gallery__thumbs">
         {images.map((image, idx) => (
           <div key={idx} className="product-gallery__thumb">
-            <img src={image} alt="" />
+            <img src={image.url} alt="" />
           </div>
         ))}
       </div>
@@ -17,6 +17,7 @@ const Gallery = ({ images }) => {
     </section>
   );
 };
-  
+
 export default Gallery;
-  
+
+//farizgacorpisananjg

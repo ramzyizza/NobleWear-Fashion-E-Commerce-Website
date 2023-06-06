@@ -11,7 +11,7 @@ import { server } from "../../utils/server";
 
 export async function getServerSideProps({ query }) {
   const pid = query.pid;
-  const res = await fetch(`http://localhost:3000/api/product/${pid}`);
+  const res = await fetch(`http://localhost:5000/products?PRODUCT_ID=${pid}`);
   const product = await res.json();
 
   return {
@@ -26,13 +26,13 @@ const Product = ({ product }) => {
 
   return (
     <Layout>
-      <Breadcrumb currentPage={product.name} />
+      <Breadcrumb currentPage={product.data[0].name} />
 
       <section className="product-single">
         <div className="container">
           <div className="product-single__content">
-            <Gallery images={product.images} />
-            <Content product={product} />
+            <Gallery images={product.data[0].product_image} />
+            <Content product={product.data[0]} />
           </div>
 
           <div className="product-single__info">
@@ -57,8 +57,11 @@ const Product = ({ product }) => {
               </button>
             </div>
 
-            <Description product={product} show={showBlock === "description"} />
-            <Reviews product={product} show={showBlock === "reviews"} />
+            <Description
+              product={product.data[0]}
+              show={showBlock === "description"}
+            />
+            {/* <Reviews product={product} show={showBlock === "reviews"} /> todos */}
           </div>
         </div>
       </section>
@@ -72,3 +75,8 @@ const Product = ({ product }) => {
 };
 
 export default Product;
+
+// todos:
+//  color
+//  size
+//  review
