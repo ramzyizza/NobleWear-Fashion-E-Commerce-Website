@@ -2953,3 +2953,31 @@ h5 {
   font-size: 20px;
   padding-block: 15px;
 }
+
+.user-info{
+  margin-top: 48px;
+  .block__title{
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-size: 30px;
+  }
+}
+
+.header-user{
+  height: 300px;
+  font-size: 48px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .featured-item__content{
+    color: white;
+    display: flex;
+  }
+}
+
+//make the submit button of the form to be centered in the page and the size auto
+.btn-submit{
+  margin-block: 30px;
+  display: block;
+  width: auto;
+}
