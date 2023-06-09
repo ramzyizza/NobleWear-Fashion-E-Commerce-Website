@@ -63,7 +63,7 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div className="navbar-add">
+      <div className="navbar">
         {/* <a className="nav-item" href="products.html" target="_blank">
           PRODUCTS
         </a>
@@ -71,11 +71,14 @@ const AddProduct = () => {
           ADMIN PANEL
         </a> */}
       </div>
-      <div id="container">
-        <h1 className="cont-h1">Add Product</h1>
+      <div>
+        <div className="admin-order">
+          <h1 className="admin-h1">Add Product</h1>
+          <h2 className="admin-h2">Admin & Seller Panel</h2>
+        </div>
         <form className="cont-form" id="form" onSubmit={handleSubmit}>
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="text"
             id="name"
@@ -84,7 +87,7 @@ const AddProduct = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="text"
             id="category"
@@ -93,7 +96,7 @@ const AddProduct = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="text"
             id="currentPrice"
@@ -102,7 +105,7 @@ const AddProduct = () => {
             onChange={(e) => setCurrentPrice(e.target.value)}
           />
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="number"
             id="price"
@@ -111,24 +114,26 @@ const AddProduct = () => {
             onChange={(e) => setPrice(e.target.value)}
           />
           <select
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             id="size"
             value={size}
             onChange={(e) => setSize(e.target.value)}
           >
-            <option value="">Select Size</option>
+            <option className="mantap-item" value="">
+              Select Size
+            </option>
             <option value="S">S</option>
             <option value="M">M</option>
             <option value="L">L</option>
             <option value="XL">XL</option>
           </select>
           <select
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
           >
-            <option className="cont-form-item" value="">
+            <option className="cont-form-item mantap-item" value="">
               Is the Product Sold?
             </option>
             <option value="Grey">Grey</option>
@@ -136,7 +141,7 @@ const AddProduct = () => {
             <option value="White">White</option>
           </select>
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="number"
             id="discount"
@@ -145,7 +150,7 @@ const AddProduct = () => {
             onChange={(e) => setDiscount(e.target.value)}
           />
           <input
-            className="cont-form-item"
+            className="cont-form-item mantap-item"
             required
             type="number"
             id="quantity"

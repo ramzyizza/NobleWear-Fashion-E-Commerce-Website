@@ -53,6 +53,7 @@ const CheckoutPage = () => {
       onSuccess: function (result) {
         console.log("success");
         console.log(result);
+        localStorage.removeItem("persist:shoppingcart");
         router.push("/success");
       },
       onPending: function (result) {
@@ -78,7 +79,7 @@ const CheckoutPage = () => {
 
     // Optional: set script attribute, for example snap.js have data-client-key attribute
     // (change the value according to your client-key)
-    const myMidtransClientKey = "your-client-key-goes-here";
+    const myMidtransClientKey = "	SB-Mid-client-CHb7th0aw5AyevMF";
     scriptTag.setAttribute("data-client-key", myMidtransClientKey);
 
     document.body.appendChild(scriptTag);

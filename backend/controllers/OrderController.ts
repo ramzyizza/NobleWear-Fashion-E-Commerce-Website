@@ -41,7 +41,6 @@ export const createOrder = async (
   res: express.Response
 ): Promise<void> => {
   try {
-    console.log(req.body);
     const orderData = {
       transaction_status: req.body.transaction_status as string,
       quantity: parseInt(req.body.quantity as string),
