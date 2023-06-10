@@ -4,7 +4,16 @@ import ProductsLoading from "./loading";
 
 const ProductsContent = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
-  const { data, error } = useSwr("http://localhost:5000/products", fetcher);
+  const { data, error } = useSwr(
+    localStorage.getItem("searchQuery") !== undefined || ""
+      ? `http://localhost:5000/products?NAME=${localStorage.getItem(
+          "searchQuery"
+        )}`
+      : "http://localhost:5000/products",
+    fetcher
+  );
+
+  if (data) localStorage.setItem("searchQuery", "");
 
   if (error) return <div>Failed to load users</div>;
   return (

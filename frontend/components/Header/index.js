@@ -15,8 +15,18 @@ const Header = ({ isErrorPage }) => {
   );
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
   const navRef = useRef(null);
   const searchRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Search Query:", searchQuery);
+    localStorage.setItem("searchQuery", searchQuery);
+    setSearchOpen(!searchOpen);
+    router.push("/products");
+  };
 
   const headerClass = () => {
     if (window.pageYOffset === 0) {
@@ -77,7 +87,7 @@ const Header = ({ isErrorPage }) => {
               searchOpen ? "search-form--active" : ""
             }`}
           >
-            <form className={`search-form`}>
+            <form className={`search-form`} onSubmit={handleSubmit}>
               <i
                 className="icon-cancel"
                 onClick={() => setSearchOpen(!searchOpen)}
@@ -86,6 +96,7 @@ const Header = ({ isErrorPage }) => {
                 type="text"
                 name="search"
                 placeholder="Enter the product you are looking for"
+                onChange={(event) => setSearchQuery(event.target.value)}
               />
             </form>
             <i
