@@ -4,7 +4,7 @@
 
 This project is a significant part of the final workshop on the Implementation of Software Design at Universitas Gadjah Mada. The objective is to design a robust software system, emphasizing the backend and architectural components.
 
-Utilizing existing projects from platforms like GitHub is allowed for the purpose of this workshop, as long as original authors are credited, and significant backend and architectural modifications are made to enhance the system. This practice is not deemed as plagiarism. The primary focus of the course is on backend development and system architecture, and the assessment will revolve around the complexity and new features introduced. The front-end of NobleWear has been adapted from existing projects to enhance the user experience while the majority of backend functionalities were developed as part of this course.
+Utilizing existing projects from platforms like GitHub is allowed for the purpose of this workshop, as long as original authors are credited, and significant backend and architectural modifications are made to enhance the system. This practice is not deemed as plagiarism. The primary focus of the course is on backend development and system architecture, and the assessment will revolve around the complexity and new features introduced. The front end of NobleWear has been adapted from existing projects to enhance the user experience while the majority of backend functionalities were developed as part of this course.
 
 ### I. INTRODUCTION
 
@@ -20,7 +20,7 @@ We wish to express our gratitude to the foundational contributors of this projec
 -   **Daniel Fjeldstad (@w3bdesign)**
 -   **Dependabot (@dependabot[bot])**
 
-Their contributions in the front-end provided us a launchpad, allowing us to focus on refining back-end functionalities.
+Their contributions in the front end provided us with a launchpad, allowing us to focus on refining back-end functionalities.
 
 **Contributor of this project:**
 -   **Antonius Teddy Kurniawan (@DSJet)**
@@ -86,5 +86,5 @@ NobleWear's feature set is designed to elevate the online shopping experience:
 
 
 ## Program Demonstration
-<iframe src="https://drive.google.com/file/d/1o-HCM5lSMdanzDYB_1e1dFx8YfgsSe9X/preview" width="640" height="480" allow="autoplay"></iframe>
+https://drive.google.com/file/d/1o-HCM5lSMdanzDYB_1e1dFx8YfgsSe9X/view?usp=sharing
 
